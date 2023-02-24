@@ -78,6 +78,28 @@ const registerScopes = (scope: Scope, plugin: VimReadingViewNavigation) => {
 		}
 		return true;
 	});
+
+    /* jump up by a page */
+	scope.register(['Ctrl'], 'u', (evt: KeyboardEvent) => {
+		const leaf = app.workspace.getActiveViewOfType(MarkdownView);
+		self.keyArray = self.resetJumpTop();
+		if (leaf.getMode() === 'preview') {
+			self.pageUp(leaf);
+		}
+		return true;
+	});
+
+    /* jump down by a page */
+	scope.register(['Ctrl'], 'd', (evt: KeyboardEvent) => {
+		const leaf = app.workspace.getActiveViewOfType(MarkdownView);
+		self.keyArray = self.resetJumpTop();
+		if (leaf.getMode() === 'preview') {
+			self.pageDown(leaf);
+		}
+		return true;
+	});
+
+
 };
 
 export default class VimReadingViewNavigation extends Plugin {
@@ -223,7 +245,17 @@ export default class VimReadingViewNavigation extends Plugin {
 		const num = scroll - this.settings.scrollDifference;
 		this.doScroll(leaf, num);
 	}
+    pageDown(leaf: MarkdownView) {
+        const scroll = this.getScroll(leaf);
+        const num = scroll + 15;
+        this.doScroll(leaf, num);
+    }
 
+    pageUp(leaf: MarkdownView) {
+        const scroll = this.getScroll(leaf);
+        const num = scroll - 15;
+        this.doScroll(leaf, num);
+    }
 	jumpBottom(leaf: MarkdownView) {
 		let scroll = this.getScroll(leaf);
 		this.doScroll(leaf, scroll + 5);

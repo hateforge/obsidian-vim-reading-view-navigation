@@ -1,8 +1,12 @@
-# Obsidian Vim Reading View Navigation
+# Fork of Obsidian Vim Reading View Navigation
+
+This is a fork of kometenstaub's obsidian vim reading view navigation.
 
 This plugin allows to scroll with <kbd>j</kbd> and <kbd>k</kbd> in the Reading View.
 
 It also lets you navigate with <kbd>gg</kbd> and <kbd>G</kbd> to the top or bottom of a note. (When embeds are present, you may need to press <kbd>G</kbd> more than once.)
+
+`ctrl+u` and `ctrl+d` scroll 15 linues up/down.
 
 ## Configuration
 
