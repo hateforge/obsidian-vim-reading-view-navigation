@@ -80,7 +80,7 @@ const registerScopes = (scope: Scope, plugin: VimReadingViewNavigation) => {
 	});
 
     /* jump up by a page */
-	scope.register(['Ctrl'], 'u', (evt: KeyboardEvent) => {
+	scope.register([], 'K', (evt: KeyboardEvent) => {
 		const leaf = app.workspace.getActiveViewOfType(MarkdownView);
 		self.keyArray = self.resetJumpTop();
 		if (leaf.getMode() === 'preview') {
@@ -90,7 +90,7 @@ const registerScopes = (scope: Scope, plugin: VimReadingViewNavigation) => {
 	});
 
     /* jump down by a page */
-	scope.register(['Ctrl'], 'd', (evt: KeyboardEvent) => {
+	scope.register([''], 'J', (evt: KeyboardEvent) => {
 		const leaf = app.workspace.getActiveViewOfType(MarkdownView);
 		self.keyArray = self.resetJumpTop();
 		if (leaf.getMode() === 'preview') {
