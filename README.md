@@ -6,7 +6,7 @@ This plugin allows to scroll with <kbd>j</kbd> and <kbd>k</kbd> in the Reading V
 
 It also lets you navigate with <kbd>gg</kbd> and <kbd>G</kbd> to the top or bottom of a note. (When embeds are present, you may need to press <kbd>G</kbd> more than once.)
 
-`ctrl+u` and `ctrl+d` scroll 15 linues up/down.
+<kbd>J</kbd>and <kbd>K</kbd> scroll 15 lines up and down.
 
 ## Configuration
 
