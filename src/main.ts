@@ -80,7 +80,7 @@ const registerScopes = (scope: Scope, plugin: VimReadingViewNavigation) => {
 	});
 
     /* jump up by a page */
-	scope.register([Shift], 'k', (evt: KeyboardEvent) => {
+	scope.register(['Shift'], 'k', (evt: KeyboardEvent) => {
 		const leaf = app.workspace.getActiveViewOfType(MarkdownView);
 		self.keyArray = self.resetJumpTop();
 		if (leaf.getMode() === 'preview') {
